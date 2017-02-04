@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  officialuser_id: 1
+  ordernumber: 1
+  paymentprice: 1.5
+  paymentstate: 1
+  deliverstate: 1
+  deliver: MyString
+  delivernumber: MyString
+  receivestate: 1
+  receivedate: 2017-01-30 02:55:58
+
+two:
+  officialuser_id: 1
+  ordernumber: 1
+  paymentprice: 1.5
+  paymentstate: 1
+  deliverstate: 1
+  deliver: MyString
+  delivernumber: MyString
+  receivestate: 1
+  receivedate: 2017-01-30 02:55:58

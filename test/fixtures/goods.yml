@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  officialaccount_id: 1
+  goodsname: MyString
+  price: 1.5
+  goodsdetail: MyText
+  secondpriceratio: 1.5
+  firstprofitratio: 1.5
+  secondprofitratio: 1.5
+  thirdprofitratio: 1.5
+
+two:
+  officialaccount_id: 1
+  goodsname: MyString
+  price: 1.5
+  goodsdetail: MyText
+  secondpriceratio: 1.5
+  firstprofitratio: 1.5
+  secondprofitratio: 1.5
+  thirdprofitratio: 1.5

@@ -1,0 +1,2 @@
+class Processcode < ApplicationRecord
+end

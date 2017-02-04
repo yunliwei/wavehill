@@ -1,0 +1,2 @@
+class Adminlog < ApplicationRecord
+end

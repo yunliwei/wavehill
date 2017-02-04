@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wechat: MyString
+  phone: MyString
+  phonevalidate: MyString
+  password_degest: MyString
+  token: MyString
+
+two:
+  wechat: MyString
+  phone: MyString
+  phonevalidate: MyString
+  password_degest: MyString
+  token: MyString

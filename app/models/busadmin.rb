@@ -1,0 +1,2 @@
+class Busadmin < ApplicationRecord
+end
