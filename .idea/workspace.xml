@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12dfd705-d874-4544-8251-9a1e027afdd1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/Development__wavehill.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Development__wavehill.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/Production__wavehill.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Production__wavehill.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/spec__wavehill.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/spec__wavehill.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/test__wavehill.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/test__wavehill.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wavehill.iml" afterPath="$PROJECT_DIR$/.idea/wavehill.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="12dfd705-d874-4544-8251-9a1e027afdd1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
