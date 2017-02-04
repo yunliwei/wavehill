@@ -23,8 +23,8 @@
 //= require contabs.min.js
 //= require plugins/pace/pace.min.js
 //= require plugins/bootstrap-table/bootstrap-table.min.js
-//= require plugins/bootstrap-table/bootstrap-table-mobile.min.js
+
 //= require plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js
-//= require demo/bootstrap-table-demo.min.js
+
 
 // require_tree .
