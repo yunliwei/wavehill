@@ -8,12 +8,12 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <%= yield %>
   </body>
 </html>
