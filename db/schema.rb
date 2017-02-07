@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170204062749) do
 
-  create_table "addrs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "addrs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
     t.string   "address"
     t.integer  "isdefault"
@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "adminlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adminlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "processcode_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
     t.string   "login"
     t.string   "password_digest"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "busadmins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "busadmins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "officialaccount_id"
     t.string   "name"
     t.string   "login"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "officialaccount_id"
     t.string   "goodsname"
     t.float    "price",              limit: 24
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at",                       null: false
   end
 
-  create_table "officialaccounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "officialaccounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "officialaccount"
     t.string   "apiid"
     t.string   "company"
@@ -68,14 +68,14 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "officialusers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "officialusers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "officialaccount_id"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  create_table "orderdetails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "orderdetails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "good_id"
     t.integer  "order_id"
     t.integer  "number"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "officialuser_id"
     t.integer  "ordernumber"
     t.float    "paymentprice",    limit: 24
@@ -97,19 +97,19 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "processcodes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "processcodes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "process"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "systemlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "systemlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "processcode_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  create_table "tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "login"
     t.integer  "age"
     t.string   "name"
@@ -117,13 +117,13 @@ ActiveRecord::Schema.define(version: 20170204062749) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "userlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "userlogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "processcode_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "wechat"
     t.string   "phone"
     t.string   "phonevalidate"
