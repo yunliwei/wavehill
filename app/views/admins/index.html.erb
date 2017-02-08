@@ -73,6 +73,24 @@
       ].join('');
     }
 
+    window.actionEvents = {
+        'click .like': function (e, value, row, index) {
+            alert('You click like icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },
+        'click .edit': function (e, value, row, index) {
+            alert(row['id']);
+            $("#newdata").modal({
+                remote: "admins/new"
+            });
+            console.log(value, row, index);
+        },
+        'click .remove': function (e, value, row, index) {
+            alert('You click remove icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        }
+    };
+
 </script>
 
 <style type="text/css">
@@ -127,6 +145,15 @@
           </div>
         </div>
       </div>
+
+      <div class="modal  fade" id="newdata" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+          </div>
+        </div>
+      </div>
+
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
         大模态窗口
       </button><a data-toggle="modal" href="admins" data-target="#modal5">Click me</a>
