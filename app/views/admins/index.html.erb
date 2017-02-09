@@ -57,7 +57,30 @@
             });
         });
 
+        window.actionEvents = {
+            'click .like': function (e, value, row, index) {
+                alert('You click like icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);
+            },
+            'click .edit': function (e, value, row, index) {
+                //alert(row['id']);
+                $("#newdata").modal({
+                    remote: "admins/new"
+                });
+                console.log(value, row, index);
+            },
+            'click .remove': function (e, value, row, index) {
+                alert('You click remove icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);
+            }
+        };
 
+        function gelhello()
+        {
+            $('.modal').map(function() {
+                $(this).modal('hide');
+            });
+        }
 
     });
 
@@ -73,23 +96,7 @@
       ].join('');
     }
 
-    window.actionEvents = {
-        'click .like': function (e, value, row, index) {
-            alert('You click like icon, row: ' + JSON.stringify(row));
-            console.log(value, row, index);
-        },
-        'click .edit': function (e, value, row, index) {
-            alert(row['id']);
-            $("#newdata").modal({
-                remote: "admins/new"
-            });
-            console.log(value, row, index);
-        },
-        'click .remove': function (e, value, row, index) {
-            alert('You click remove icon, row: ' + JSON.stringify(row));
-            console.log(value, row, index);
-        }
-    };
+
 
 </script>
 
