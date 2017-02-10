@@ -49,15 +49,17 @@
             }
         });
 
-        if($('#smt').prop("disabled")==true)
-        {
-            alert('1');
-            $('.close').click();
-        }
 
         $('#smt').click(function(){
+            $('#newdata').modal('hide');
 
         });
+
+        $('#smt').on("disabled",function(e,data){
+            $('.close').click();
+        });
+
+
 
 
     });

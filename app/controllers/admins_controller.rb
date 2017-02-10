@@ -10,7 +10,13 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.new(admin_params)
-@admin.save
+    @admin.save
+    #render js: "alert('hello');"
+    respond_to do |format|
+      format.js{alert('hello')}
+    end
+    #render 'success'
+    #render json:'sucess'
 
   end
 
