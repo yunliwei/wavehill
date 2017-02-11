@@ -38,26 +38,40 @@
                     layer.msg("加载数据失败", {time : 1500, icon : 2});
                 }
             });
+            $("[name='refresh']").addClass('btn-outline');
+            $("[name='toggle']").addClass('btn-outline');
         }
 
 
       $(function(){
         $('#admintable').on('click-row.bs.table', function (e, row, ele) {
-          if($(ele).hasClass('info')){
-            $(ele).removeClass('info')
-          }else {
-            $(ele).addClass("info");
-          }
+
+           //var arr= $('#admintable').getSelections();
+            //var arr = $('#admintable').bootstrapTable('getSelections');
+            //alert(arr);
+//          if($(ele).hasClass('info')){
+//            $(ele).removeClass('info')
+//          }else {
+//            $(ele).addClass("info");
+//          }
         });
       });
 
+
+
+
+
+
         $(function(){
             $('#admintable').on('dbl-click-row.bs.table', function (e, row, ele) {
-              //$(ele).addClass("danger");
                 $("#newdata").modal({
                     remote: "admins/new"
                 });
             });
+        });
+
+        $("#newdata").on("hidden.bs.modal", function() {
+            $(this).removeData("bs.modal");
         });
 
         window.actionEvents = {
@@ -67,6 +81,7 @@
             },
             'click .edit': function (e, value, row, index) {
                 //alert(row['id']);
+                $('#newdata.modal-content').empty();
                 $("#newdata").modal({
                     remote: "admins/new"
                 });
@@ -78,12 +93,45 @@
             }
         };
 
-        function gelhello()
-        {
-            $('.modal').map(function() {
-                $(this).modal('hide');
+        $('#addBtn').click(function(){
+            $("#newdata").modal({
+                remote: "admins/new"
             });
-        }
+        });
+
+        $('#delBtn').click(function(){
+
+
+            swal({
+                        title: "确定删除吗?",
+                        //text: "You will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "删除",
+                        cancelButtonText: "取消",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm){
+                        if (isConfirm) {
+                            var delArrJson =$('#admintable').bootstrapTable('getSelections');
+                            var delArr=new Array();
+                            $.each(delArrJson,function(i,item){
+                                delArr.push(item.id);
+                            });
+                            //alert(delArr);
+                            $.ajax({
+                                url:'admins/deletedata?ids='+delArr,
+                                type:'get' //GET
+                            });
+                            swal.close();
+                        } else {
+                            swal.close();
+                        }
+                    });
+
+        });
 
     });
 
@@ -120,7 +168,15 @@
       <div class="example-wrap">
 
         <div class="example">
-          <table id="admintable">
+          <div class="btn-group hidden-xs" id="Toolbar" role="group">
+            <button type="button" class="btn btn-outline btn-default" id="addBtn">
+              <i class="glyphicon glyphicon-plus" aria-hidden="true" ></i>
+            </button>
+            <button type="button" class="btn btn-outline btn-default" id="delBtn">
+              <i class="glyphicon glyphicon-trash" aria-hidden="true" ></i>
+            </button>
+          </div>
+          <table id="admintable" data-show-refresh="true" data-show-toggle="true" data-mobile-responsive="true" data-toolbar="#Toolbar" data-click-to-select="true">
             <thead>
             <tr>
               <th data-field="state" data-checkbox="true"></th>
@@ -135,27 +191,6 @@
       </div>
       <!-- End Example Pagination -->
 
-
-      <div class="modal  fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title">窗口标题</h4>
-              <small class="font-bold">这里可以显示副标题。</small>
-            </div>
-            <div class="modal-body">
-              <p><strong>H+</strong> 是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的jQuery插件，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。</p>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
-              <button type="button" class="btn btn-primary">保存</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="modal  fade" id="newdata" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -163,10 +198,6 @@
           </div>
         </div>
       </div>
-
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
-        大模态窗口
-      </button><a data-toggle="modal" href="admins" data-target="#modal5">Click me</a>
 
 
     </div>

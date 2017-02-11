@@ -27,4 +27,8 @@
 //= require plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js
 //= require content.min.js
 //= require plugins/validate/jquery.validate.min.js
+//= require plugins/toastr/toastr.min.js
+//= require plugins/sweetalert/sweetalert.min.js
+//= require my.js
+
 // require_tree .

@@ -5,26 +5,35 @@ class AdminsController < ApplicationController
   end
 
   def new
-@admin =Admin.new
+    @admin =Admin.new
   end
 
   def create
     @admin = Admin.new(admin_params)
-    @admin.save
-    #render js: "alert('hello');"
     respond_to do |format|
-      format.js{alert('hello')}
+      if @admin.save
+        format.js
+      end
     end
-    #render 'success'
-    #render json:'sucess'
-
   end
+
 
   def selectdata
     @admins=Admin.page(params[:pageNumber]).per(params[:pageSize])
     #render json:@admins
     render json: '{"total":' + Admin.count.to_s + ',"rows":' + @admins.to_json + '}'
     #render jso: '{"total":5000,"rows":' + @admins.to_json + '"}'
+  end
+
+  def deletedata
+    delarray =params[:ids].to_s.split(',')
+    delarray.each do |del|
+      admin= Admin.find(del)
+      admin.destroy
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def valilogin

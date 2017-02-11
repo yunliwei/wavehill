@@ -1,0 +1,6 @@
+<% if @admin.errors.count == 0 %>
+$('.close').click();
+toastr.clear();
+toastr.success('管理员创建成功!');
+$('#admintable').bootstrapTable('refresh');
+<% end %>

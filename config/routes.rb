@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     collection do
       get 'selectdata'
       get 'valilogin'
+      get 'deletedata'
+      get 'insertdata'
     end
   end
 

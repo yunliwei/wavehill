@@ -49,19 +49,6 @@
             }
         });
 
-
-        $('#smt').click(function(){
-            $('#newdata').modal('hide');
-
-        });
-
-        $('#smt').on("disabled",function(e,data){
-            $('.close').click();
-        });
-
-
-
-
     });
 </script>
 
@@ -72,7 +59,7 @@
 </div>
 <div class="modal-body">
 
-  <%= form_for(@admin,:html => {:class=>'form-horizontal m-t',:multipart => true,:id=>'adminForm'}) do |f| %>
+  <%= form_for(@admin,:html => {:class=>'form-horizontal m-t',:multipart => true,:id=>'adminForm'},remote:true) do |f| %>
       <div class="form-group">
         <label class="col-sm-3 control-label">姓名：</label>
         <div class="col-sm-8">
