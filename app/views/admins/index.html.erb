@@ -94,9 +94,18 @@
         };
 
         $('#addBtn').click(function(){
-            $("#newdata").modal({
-                remote: "admins/new"
-            });
+//            $("#newdata").modal({
+//                remote: "admins/new"
+//            });
+          layer.open({
+            type: 2,
+            title: '创建管理员',
+            shadeClose: false,
+            shade: 0.8,
+            area: ['90%', '80%'],
+            content: 'admins/new' //iframe的url
+          });
+
         });
 
         $('#delBtn').click(function(){

@@ -29,6 +29,7 @@
 //= require plugins/validate/jquery.validate.min.js
 //= require plugins/toastr/toastr.min.js
 //= require plugins/sweetalert/sweetalert.min.js
+//= require plugins/layer/layer.min.js
 //= require my.js
 
 // require_tree .
